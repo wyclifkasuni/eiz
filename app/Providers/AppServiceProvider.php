@@ -27,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //share data to dashboard
+        Schema::defaultStringLength(191);
 
         View::composer('layouts.dashboard.adm',DataComposer::class);
    
