@@ -6,6 +6,7 @@ use App\Http\View\Composers\DatComposer;
 use App\Http\View\Composers\DataComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
         //share data to dashboard      
 
         View::composer('layouts.dashboard.adm',DataComposer::class);
